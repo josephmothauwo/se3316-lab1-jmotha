@@ -10,8 +10,23 @@
     
 }
 
+form{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-left: 4rem;
+}
+
+.error{
+    
+    margin-left: 5rem;
+    color: red;
+}
 input{
-    width: 70%;
+    width: 80%;
+}
+
+button{
+    margin-right: 12rem;
 }
 
 
@@ -26,6 +41,7 @@ input{
 }
 
 .pokemon{
+    text-align: center;
     list-style-type: none;
     background-color: lightblue;
     border-radius: 3px;

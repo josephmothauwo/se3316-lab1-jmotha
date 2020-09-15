@@ -7,6 +7,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="stylesheet" href="app.css">
+    <script defer src="app.js"></script>
+
 </head>
 
 <body>
@@ -15,236 +17,242 @@
         <h1>Pokédex</h1>
 
         <div id="searchWrapper">
-            <div id="numberSearchWrapper">
+            <form id="numberSearch" action="/" method="GET">
                 <input type="text" name="numberSearchBar" id="numberSearchBar"
                     placeholder="search for a pokemon by number" />
-            </div>
+                <button id="numberSearchButton" type="submit">Search</button>
+            </form>
 
-            <div id="nameSearchWrapper">
+            <form id="nameSearch" action="/" method="GET">
                 <input type="text" name="nameSearchBar" id="nameSearchBar" placeholder="search for a pokemon by name" />
-            </div>
+                <button id="nameSearchButton" type="submit">Search</button>
+            </form>
+
+            <div class="error" id="numberError"></div>
+
+
+            <div class="error" id="nameError"></div>
+
         </div>
-
-        <ul id="pokemonList">
-            <li class="pokemon">
-                <h2>Bulbasaur</h2>
-                <p class="number">
-                    <span> Number:</span>
-                    <span>1</span>
-                </p>
-                <p class="type">Type: Grass / Poison</p>
-                <p class="information">Fast Move 1: Tackle</p>
-                <img src="imgs/pokemon/1.png" alt="image cant be found">
-            </li>
-            <li class="pokemon">
-                <h2>Ivysaur</h2>
-                <p class="number">
-                    <span> Number:</span>
-                    <span>2</span>
-                </p>
-                <p class="type">Type: Grass / Poison</p>
-                <p class="information">Fast Move 1: Razor Leaf</p>
-                <img src="imgs/pokemon/2.png" alt="image cant be found">
-            </li>
-            <li class="pokemon">
-                <h2>Venusaur </h2>
-                <p class="number">
-                    <span> Number:</span>
-                    <span>3</span>
-                </p>
-                <p class="type">Type: Grass / Poison</p>
-                <p class="information">Fast Move 1: Razor Leaf</p>
-                <img src="imgs/pokemon/3.png" alt="image cant be found">
-            </li>
-            <li class="pokemon">
-                <h2>Charmander</h2>
-                <p class="number">
-                    <span> Number:</span>
-                    <span>4</span>
-                </p>
-                <p class="type">Type: Fire</p>
-                <p class="information">Fast Move 1: Ember</p>
-                <img src="imgs/pokemon/4.png" alt="image cant be found">
-            </li>
-            <li class="pokemon">
-                <h2>Charmeleon</h2>
-                <p class="number">
-                    <span> Number:</span>
-                    <span>5</span>
-                </p>
-                <p class="type">Type: Fire </p>
-                <p class="information">Fast Move 1: Ember</p>
-                <img src="imgs/pokemon/5.png" alt="image cant be found">
-            </li>
-            <li class="pokemon">
-                <h2>Charizard</h2>
-                <p class="number">
-                    <span> Number:</span>
-                    <span>6</span>
-                </p>
-                <p class="type">Type: Fire / Flying </p>
-                <p class="information">Fast Move 1: Fire Spin</p>
-                <img src="imgs/pokemon/6.png" alt="image cant be found">
-            </li>
-            <li class="pokemon">
-                <h2>Squirtle</h2>
-                <p class="number">
-                    <span> Number:</span>
-                    <span>7</span>
-                </p>
-                <p class="type">Type: Water</p>
-                <p class="information">Fast Move 1: Tackle</p>
-                <img src="imgs/pokemon/7.png" alt="image cant be found">
-            </li>
-            <li class="pokemon">
-                <h2>Wartortle</h2>
-                <p class="number">
-                    <span> Number:</span>
-                    <span>8</span>
-                </p>
-                <p class="type">Type: Water</p>
-                <p class="information">Fast Move 1: Bite</p>
-                <img src="imgs/pokemon/8.png" alt="image cant be found">
-            </li>
-            <li class="pokemon">
-                <h2>Blastoise</h2>
-                <p class="number">
-                    <span> Number:</span>
-                    <span>9</span>
-                </p>
-                <p class="type">Type: Water</p>
-                <p class="information">Fast Move 1: Bite</p>
-                <img src="imgs/pokemon/9.png" alt="image cant be found">
-            </li>
-            <li class="pokemon">
-                <h2>Caterpie</h2>
-                <p class="number">
-                    <span> Number:</span>
-                    <span>10</span>
-                </p>
-                <p class="type">Type: Bug</p>
-                <p class="information">Fast Move 1: Tackle</p>
-                <img src="imgs/pokemon/10.png" alt="image cant be found">
-            </li>
-            <li class="pokemon">
-                <h2>Metapod</h2>
-                <p class="number">
-                    <span> Number:</span>
-                    <span>11</span>
-                </p>
-                <p class="type">Type: Bug</p>
-                <p class="information">Fast Move 1: Tackle</p>
-                <img src="imgs/pokemon/11.png" alt="image cant be found">
-            </li>
-            <li class="pokemon">
-                <h2>Butterfree</h2>
-                <p class="number">
-                    <span> Number:</span>
-                    <span>12</span>
-                </p>
-                <p class="type">Type: Bug / Flying</p>
-                <p class="information">Fast Move 1: Struggle Bug</p>
-                <img src="imgs/pokemon/12.png" alt="image cant be found">
-            </li>
-            <li class="pokemon">
-                <h2>Weedle</h2>
-                <p class="number">
-                    <span> Number:</span>
-                    <span>13</span>
-                </p>
-                <p class="type">Type: Bug / Poison</p>
-                <p class="information">Fast Move 1: Bug Bite</p>
-                <img src="imgs/pokemon/13.png" alt="image cant be found">
-            </li>
-            <li class="pokemon">
-                <h2>Kakuna</h2>
-                <p class="number">
-                    <span> Number:</span>
-                    <span>14</span>
-                </p>
-                <p class="type">Type: Bug / Poison</p>
-                <p class="information">Fast Move 1: Bug Bite</p>
-                <img src="imgs/pokemon/14.png" alt="image cant be found">
-            </li>
-            <li class="pokemon">
-                <h2>Beedrill</h2>
-                <p class="number">
-                    <span> Number:</span>
-                    <span>15</span>
-                </p>
-                <p class="type">Type: Bug / Poison</p>
-                <p class="information">Fast Move 1: Infestation</p>
-                <img src="imgs/pokemon/15.png" alt="image cant be found">
-            </li>
-            <li class="pokemon">
-                <h2>Pidgey</h2>
-                <p class="number">
-                    <span> Number:</span>
-                    <span>16</span>
-                </p>
-                <p class="type">Type: Normal / Flying</p>
-                <p class="information">Fast Move 1: Tackle</p>
-                <img src="imgs/pokemon/16.png" alt="image cant be found">
-            </li>
-            <li class="pokemon">
-                <h2>Pidgeotto</h2>
-                <p class="number">
-                    <span> Number:</span>
-                    <span>17</span>
-                </p>
-                <p class="type">Type: Normal / Flying</p>
-                <p class="information">Fast Move 1: Wing Attack</p>
-                <img src="imgs/pokemon/17.png" alt="image cant be found">
-            </li>
-            <li class="pokemon">
-                <h2>Pidgeot</h2>
-                <p class="number">
-                    <span> Number:</span>
-                    <span>18</span>
-                </p>
-                <p class="type">Type: Normal / Flying</p>
-                <p class="information">Fast Move 1: Air Slash</p>
-                <img src="imgs/pokemon/18.png" alt="image cant be found">
-            </li>
-            <li class="pokemon">
-                <h2>Rattata</h2>
-                <p class="number">
-                    <span> Number:</span>
-                    <span>19</span>
-                </p>
-                <p class="type">Type: Normal</p>
-                <p class="information">Fast Move 1: Tackle</p>
-                <img src="imgs/pokemon/19.png" alt="image cant be found">
-            </li>
-            <li class="pokemon">
-                <h2>Raticate</h2>
-                <p class="number">
-                    <span> Number:</span>
-                    <span>20</span>
-                </p>
-                <p class="type">Type: Normal</p>
-                <p class="information">Fast Move 1: Bite</p>
-                <img src="imgs/pokemon/20.png" alt="image cant be found">
-            </li>
-        </ul>
-
-        <hr>
-
-        <div id="referencesWrapper">
-            <h2>References</h2>
-            <div class="reference">
-                1. Pokemon data set from https://www.kaggle.com/kvpratama/pokemon-images-dataset
-            </div>
-            <div class="reference">
-                2. Pokemon excel from
-                https://www.reddit.com/r/TheSilphRoad/comments/7p952h/pokemon_go_pokedex_spreadsheet/
-            </div>
-        </div>
-
     </div>
 
+    <ul id="pokemonList">
+        <li class="pokemon">
+            <h2>Bulbasaur</h2>
+            <p class="number">
+                <span> Number:</span>
+                <span>1</span>
+            </p>
+            <p class="type">Type: Grass / Poison</p>
+            <p class="information">Fast Move 1: Tackle</p>
+            <img src="imgs/pokemon/1.png" alt="image cant be found">
+        </li>
+        <li class="pokemon">
+            <h2>Ivysaur</h2>
+            <p class="number">
+                <span> Number:</span>
+                <span>2</span>
+            </p>
+            <p class="type">Type: Grass / Poison</p>
+            <p class="information">Fast Move 1: Razor Leaf</p>
+            <img src="imgs/pokemon/2.png" alt="image cant be found">
+        </li>
+        <li class="pokemon">
+            <h2>Venusaur </h2>
+            <p class="number">
+                <span> Number:</span>
+                <span>3</span>
+            </p>
+            <p class="type">Type: Grass / Poison</p>
+            <p class="information">Fast Move 1: Razor Leaf</p>
+            <img src="imgs/pokemon/3.png" alt="image cant be found">
+        </li>
+        <li class="pokemon">
+            <h2>Charmander</h2>
+            <p class="number">
+                <span> Number:</span>
+                <span>4</span>
+            </p>
+            <p class="type">Type: Fire</p>
+            <p class="information">Fast Move 1: Ember</p>
+            <img src="imgs/pokemon/4.png" alt="image cant be found">
+        </li>
+        <li class="pokemon">
+            <h2>Charmeleon</h2>
+            <p class="number">
+                <span> Number:</span>
+                <span>5</span>
+            </p>
+            <p class="type">Type: Fire </p>
+            <p class="information">Fast Move 1: Ember</p>
+            <img src="imgs/pokemon/5.png" alt="image cant be found">
+        </li>
+        <li class="pokemon">
+            <h2>Charizard</h2>
+            <p class="number">
+                <span> Number:</span>
+                <span>6</span>
+            </p>
+            <p class="type">Type: Fire / Flying </p>
+            <p class="information">Fast Move 1: Fire Spin</p>
+            <img src="imgs/pokemon/6.png" alt="image cant be found">
+        </li>
+        <li class="pokemon">
+            <h2>Squirtle</h2>
+            <p class="number">
+                <span> Number:</span>
+                <span>7</span>
+            </p>
+            <p class="type">Type: Water</p>
+            <p class="information">Fast Move 1: Tackle</p>
+            <img src="imgs/pokemon/7.png" alt="image cant be found">
+        </li>
+        <li class="pokemon">
+            <h2>Wartortle</h2>
+            <p class="number">
+                <span> Number:</span>
+                <span>8</span>
+            </p>
+            <p class="type">Type: Water</p>
+            <p class="information">Fast Move 1: Bite</p>
+            <img src="imgs/pokemon/8.png" alt="image cant be found">
+        </li>
+        <li class="pokemon">
+            <h2>Blastoise</h2>
+            <p class="number">
+                <span> Number:</span>
+                <span>9</span>
+            </p>
+            <p class="type">Type: Water</p>
+            <p class="information">Fast Move 1: Bite</p>
+            <img src="imgs/pokemon/9.png" alt="image cant be found">
+        </li>
+        <li class="pokemon">
+            <h2>Caterpie</h2>
+            <p class="number">
+                <span> Number:</span>
+                <span>10</span>
+            </p>
+            <p class="type">Type: Bug</p>
+            <p class="information">Fast Move 1: Tackle</p>
+            <img src="imgs/pokemon/10.png" alt="image cant be found">
+        </li>
+        <li class="pokemon">
+            <h2>Metapod</h2>
+            <p class="number">
+                <span> Number:</span>
+                <span>11</span>
+            </p>
+            <p class="type">Type: Bug</p>
+            <p class="information">Fast Move 1: Tackle</p>
+            <img src="imgs/pokemon/11.png" alt="image cant be found">
+        </li>
+        <li class="pokemon">
+            <h2>Butterfree</h2>
+            <p class="number">
+                <span> Number:</span>
+                <span>12</span>
+            </p>
+            <p class="type">Type: Bug / Flying</p>
+            <p class="information">Fast Move 1: Struggle Bug</p>
+            <img src="imgs/pokemon/12.png" alt="image cant be found">
+        </li>
+        <li class="pokemon">
+            <h2>Weedle</h2>
+            <p class="number">
+                <span> Number:</span>
+                <span>13</span>
+            </p>
+            <p class="type">Type: Bug / Poison</p>
+            <p class="information">Fast Move 1: Bug Bite</p>
+            <img src="imgs/pokemon/13.png" alt="image cant be found">
+        </li>
+        <li class="pokemon">
+            <h2>Kakuna</h2>
+            <p class="number">
+                <span> Number:</span>
+                <span>14</span>
+            </p>
+            <p class="type">Type: Bug / Poison</p>
+            <p class="information">Fast Move 1: Bug Bite</p>
+            <img src="imgs/pokemon/14.png" alt="image cant be found">
+        </li>
+        <li class="pokemon">
+            <h2>Beedrill</h2>
+            <p class="number">
+                <span> Number:</span>
+                <span>15</span>
+            </p>
+            <p class="type">Type: Bug / Poison</p>
+            <p class="information">Fast Move 1: Infestation</p>
+            <img src="imgs/pokemon/15.png" alt="image cant be found">
+        </li>
+        <li class="pokemon">
+            <h2>Pidgey</h2>
+            <p class="number">
+                <span> Number:</span>
+                <span>16</span>
+            </p>
+            <p class="type">Type: Normal / Flying</p>
+            <p class="information">Fast Move 1: Tackle</p>
+            <img src="imgs/pokemon/16.png" alt="image cant be found">
+        </li>
+        <li class="pokemon">
+            <h2>Pidgeotto</h2>
+            <p class="number">
+                <span> Number:</span>
+                <span>17</span>
+            </p>
+            <p class="type">Type: Normal / Flying</p>
+            <p class="information">Fast Move 1: Wing Attack</p>
+            <img src="imgs/pokemon/17.png" alt="image cant be found">
+        </li>
+        <li class="pokemon">
+            <h2>Pidgeot</h2>
+            <p class="number">
+                <span> Number:</span>
+                <span>18</span>
+            </p>
+            <p class="type">Type: Normal / Flying</p>
+            <p class="information">Fast Move 1: Air Slash</p>
+            <img src="imgs/pokemon/18.png" alt="image cant be found">
+        </li>
+        <li class="pokemon">
+            <h2>Rattata</h2>
+            <p class="number">
+                <span> Number:</span>
+                <span>19</span>
+            </p>
+            <p class="type">Type: Normal</p>
+            <p class="information">Fast Move 1: Tackle</p>
+            <img src="imgs/pokemon/19.png" alt="image cant be found">
+        </li>
+        <li class="pokemon">
+            <h2>Raticate</h2>
+            <p class="number">
+                <span> Number:</span>
+                <span>20</span>
+            </p>
+            <p class="type">Type: Normal</p>
+            <p class="information">Fast Move 1: Bite</p>
+            <img src="imgs/pokemon/20.png" alt="image cant be found">
+        </li>
+    </ul>
 
+    <hr>
 
+    <div id="referencesWrapper">
+        <h2>References</h2>
+        <div class="reference">
+            1. Pokemon data set from https://www.kaggle.com/kvpratama/pokemon-images-dataset
+        </div>
+        <div class="reference">
+            2. Pokemon excel from
+            https://www.reddit.com/r/TheSilphRoad/comments/7p952h/pokemon_go_pokedex_spreadsheet/
+        </div>
+    </div>
+
+    </div>
 
 
     <!-- Embedded JavaScript go here -->
