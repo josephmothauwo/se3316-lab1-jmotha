@@ -40,8 +40,18 @@ numberSearchBar.addEventListener("keyup", function (event) {
 nameSearch.addEventListener('submit', (e) => {
     e.preventDefault()
     var letters = /^[A-Za-z]+$/
+    let messages = []
+
     if (!nameSearchBar.value.match(letters)) {
-        document.getElementById("nameError").innerHTML = "Please only enter characters";
+        messages.push('Please only enter characters')
+    }
+
+    if (nameSearchBar.value.length >= 20) {
+        messages.push('Name must be shorter than 20 letters')
+    }
+
+    if (messages.length > 0) {
+        document.getElementById("nameError").innerHTML = messages.join(', ')
     }
 
     else {
