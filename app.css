@@ -25,12 +25,17 @@ body {
     grid-template-columns: 3fr 1fr;
     grid-template-areas: 
     'name image'
+    'number image'
     'type image'
     'description image';
 }
 
 .pokemon h2{
     grid-area: name;
+}
+
+.pokemon .number{
+    grid-area: number;
 }
 
 .pokemon .type{
