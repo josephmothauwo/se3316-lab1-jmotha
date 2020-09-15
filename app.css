@@ -1,10 +1,20 @@
-body {
 
-}
 
 .container{
     text-align: center;
 }
+
+#searchWrapper{
+    display: grid;
+    grid-template-columns: auto auto;
+    
+}
+
+input{
+    width: 70%;
+}
+
+
 
 #pokemonList{
     margin: auto;
