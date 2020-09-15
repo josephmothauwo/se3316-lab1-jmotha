@@ -12,6 +12,13 @@ numberSearch.addEventListener('submit', (e) => {
 
 })
 
+numberSearchBar.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("numberSearchButton").click();
+    }
+})
+
 nameSearch.addEventListener('submit', (e) => {
     var letters = /^[A-Za-z]+$/
     if (!nameSearchBar.value.match(letters)) {
@@ -20,3 +27,12 @@ nameSearch.addEventListener('submit', (e) => {
     }
 
 })
+
+nameSearchBar.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+        event.preventDefault();
+        document.getElementById("nameSearchButton").click();
+    }
+})
+
+
