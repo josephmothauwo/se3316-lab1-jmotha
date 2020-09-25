@@ -82,16 +82,16 @@ numberSearch.addEventListener("submit", (e) => {
   } else {
     // appending pokemon that match search results into an array
     for (i = 0; i < names.length; i++) {
-      if (i.toString().includes(numberInput)) {
+      if ((i + 1).toString().includes(numberInput)) {
         numberOutput.push(
           "Name: " +
-            names[i - 1] +
+            names[i] +
             ",Number: " +
-            i.toString() +
+            (i + 1).toString() +
             ", Type: " +
-            type[i - 1] +
+            type[i] +
             ", Move: " +
-            move[i - 1] +
+            move[i] +
             "\n"
         );
         maxNum += 1;
