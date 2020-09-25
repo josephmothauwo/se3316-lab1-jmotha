@@ -44,6 +44,7 @@ button{
     text-align: center;
     list-style-type: none;
     background-color: lightblue;
+    border: 2px solid darkseagreen;
     border-radius: 3px;
     padding: 20px 20px;
     margin: auto;
