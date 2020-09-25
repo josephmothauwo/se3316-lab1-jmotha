@@ -1,78 +1,71 @@
-
-
-.container{
-    text-align: center;
+.container {
+  text-align: center;
 }
 
-#searchWrapper{
-    display: grid;
-    grid-template-columns: auto auto;
-    
+#searchWrapper {
+  display: grid;
+  grid-template-columns: auto auto;
 }
 
-form{
-    display: grid;
-    grid-template-columns: auto auto;
-    margin-left: 4rem;
+form {
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-left: 4rem;
 }
 
-.error{
-    
-    margin-left: 5rem;
-    color: red;
+.error {
+  margin-left: 5rem;
+  color: red;
 }
-input{
-    width: 80%;
-}
-
-button{
-    margin-right: 12rem;
+input {
+  width: 80%;
 }
 
-
-
-#pokemonList{
-    margin: auto;
-    padding: 20px 20px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    grid-gap: 20px;
-
+button {
+  margin-right: 12rem;
 }
 
-.pokemon{
-    text-align: center;
-    list-style-type: none;
-    background-color: lightblue;
-    border: 2px solid darkseagreen;
-    border-radius: 3px;
-    padding: 20px 20px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-template-areas: 
-    'name image'
-    'number image'
-    'type image'
-    'description image';
+#pokemonList {
+  margin: auto;
+  padding: 20px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-gap: 20px;
 }
 
-.pokemon h2{
-    grid-area: name;
+.pokemon {
+  text-align: center;
+  list-style-type: none;
+  background-color: lightblue;
+  border: 2px solid darkseagreen;
+  border-radius: 3px;
+  padding: 20px 20px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas:
+    "name image"
+    "number image"
+    "type image"
+    "description image";
 }
 
-.pokemon .number{
-    grid-area: number;
+.pokemon h2 {
+  grid-area: name;
 }
 
-.pokemon .type{
-    grid-area: type;
+.pokemon .number {
+  grid-area: number;
 }
 
-.pokemon .information{
-    grid-area: description;
+.pokemon .type {
+  grid-area: type;
 }
 
-.pokemon img{
-    grid-area: image;
+.pokemon .information {
+  grid-area: description;
+}
+
+.pokemon img {
+  grid-area: image;
 }
