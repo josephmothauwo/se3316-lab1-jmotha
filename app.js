@@ -85,13 +85,13 @@ numberSearch.addEventListener("submit", (e) => {
       if (i.toString().includes(numberInput)) {
         numberOutput.push(
           "Name: " +
-            names[i] +
+            names[i - 1] +
             ",Number: " +
             i.toString() +
             ", Type: " +
-            type[i] +
+            type[i - 1] +
             ", Move: " +
-            move[i] +
+            move[i - 1] +
             "\n"
         );
         maxNum += 1;
