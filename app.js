@@ -140,7 +140,7 @@ nameSearch.addEventListener("submit", (e) => {
           "Name: " +
             names[i] +
             ",Number: " +
-            i.toString() +
+            (i + 1).toString() +
             ", Type: " +
             type[i] +
             ", Move: " +
