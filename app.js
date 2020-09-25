@@ -1,8 +1,9 @@
+// getting form elements and number or letter input
 const numberSearchBar = document.getElementById("numberSearchBar");
 const nameSearchBar = document.getElementById("nameSearchBar");
 const numberSearch = document.getElementById("numberSearch");
 const nameSearch = document.getElementById("nameSearch");
-
+// hardcoding the pokemon information into arrays
 names = [
   "Bulbasaur",
   "Ivysaur",
@@ -75,9 +76,11 @@ numberSearch.addEventListener("submit", (e) => {
   let numberInput = numberSearchBar.value;
   let maxNum = 0;
   let numberOutput = [];
+  // number validation
   if (isNaN(numberInput) || numberInput < 1 || numberInput > 20) {
     alert("Please enter numbers 1-20");
   } else {
+    // appending pokemon that match search results into an array
     for (i = 0; i < names.length; i++) {
       if (i.toString().includes(numberInput)) {
         numberOutput.push(
@@ -93,14 +96,17 @@ numberSearch.addEventListener("submit", (e) => {
         );
         maxNum += 1;
       }
+      // break after 5 pokemon match results
       if (maxNum >= 5) {
         break;
       }
     }
+    // search results
     alert(numberOutput.join(""));
   }
 });
 
+// linking enter to search button
 numberSearchBar.addEventListener("keyup", function (event) {
   if (event.key === 13) {
     event.preventDefault();
@@ -115,6 +121,7 @@ nameSearch.addEventListener("submit", (e) => {
   let nameInput = nameSearchBar.value.toLowerCase();
   let maxNum = 0;
   let nameOutput = [];
+  // letter and length validation
   if (!nameSearchBar.value.match(letters)) {
     messages.push("Please only enter characters");
   }
@@ -126,6 +133,7 @@ nameSearch.addEventListener("submit", (e) => {
   if (messages.length > 0) {
     alert(messages.join(", "));
   } else {
+    // appending pokemon that match search results into an array
     for (i = 0; i < names.length; i++) {
       if (names[i].toLowerCase().includes(nameInput)) {
         nameOutput.push(
@@ -141,6 +149,7 @@ nameSearch.addEventListener("submit", (e) => {
         );
         maxNum += 1;
       }
+      // break after 5 pokemon match results
       if (maxNum >= 5) {
         break;
       }
@@ -149,6 +158,7 @@ nameSearch.addEventListener("submit", (e) => {
   }
 });
 
+// linking enter to search button
 nameSearchBar.addEventListener("keyup", function (event) {
   if (event.key === 13) {
     event.preventDefault();
