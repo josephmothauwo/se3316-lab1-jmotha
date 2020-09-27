@@ -86,7 +86,7 @@ numberSearch.addEventListener("submit", (e) => {
         numberOutput.push(
           "Name: " +
             names[i] +
-            ",Number: " +
+            ", Number: " +
             (i + 1).toString() +
             ", Type: " +
             type[i] +
@@ -126,8 +126,8 @@ nameSearch.addEventListener("submit", (e) => {
     messages.push("Please only enter characters");
   }
 
-  if (nameSearchBar.value.length >= 20) {
-    messages.push("Name must be shorter than 20 letters");
+  if (nameSearchBar.value.length > 20) {
+    messages.push("Name must be shorter than 21 characters");
   }
 
   if (messages.length > 0) {
