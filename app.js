@@ -1,3 +1,4 @@
+// lab2
 // getting form elements and number or letter input
 const numberSearchBar = document.getElementById("numberSearchBar");
 const nameSearchBar = document.getElementById("nameSearchBar");
