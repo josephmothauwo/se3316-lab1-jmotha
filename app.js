@@ -72,7 +72,12 @@ move = [
   "Bite",
 ];
 
-numberSearch.addEventListener("submit", (e) => {
+let newDiv = document.createElement("div");
+newDiv.textContent = "";
+const searched = document.querySelector(".container");
+searched.appendChild(newDiv);
+
+numberSearch.addEventListener("keyup", (e) => {
   e.preventDefault();
   let numberInput = numberSearchBar.value;
   let maxNum = 0;
