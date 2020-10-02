@@ -72,22 +72,15 @@ move = [
   "Bite",
 ];
 
-let newDiv = document.createElement("div");
+let resultsContainer = document.createElement("div");
+resultsContainer.setAttribute("class", "resultsConainer");
 const headerContainer = document.querySelector(".container");
-headerContainer.appendChild(newDiv);
-
-let newli = document.createElement("li");
-var node = document.createTextNode("This is new text");
-newli.appendChild(node);
+headerContainer.appendChild(resultsContainer);
 
 let newList = document.createElement("ul");
 newList.setAttribute("class", "searchedList");
-newList.appendChild(newli);
 
-newDiv.appendChild(newList);
-
-// let newli= document.createElement("li");
-// const list=document.querySelector(".searList")
+resultsContainer.appendChild(newList);
 
 numberSearch.addEventListener("keyup", (e) => {
   e.preventDefault();
