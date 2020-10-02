@@ -69,3 +69,9 @@ button {
 .pokemon img {
   grid-area: image;
 }
+
+.searchResult {
+  border: 2px solid lightcoral;
+  list-style-type: none;
+  background-color: peachpuff;
+}
