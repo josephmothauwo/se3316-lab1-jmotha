@@ -85,42 +85,36 @@ resultsContainer.appendChild(newList);
 numberSearch.addEventListener("keyup", (e) => {
   e.preventDefault();
   let numberInput = numberSearchBar.value;
-  let maxNum = 0;
-  let numberOutput = [];
   // number validation
   if (isNaN(numberInput) || numberInput < 1 || numberInput > 20) {
     alert("Please enter numbers 1-20");
   } else {
     // appending pokemon that match search results into an array
 
-    let pokemonName = document.querySelector(".pokemonName");
-    let number = document.querySelector(".#");
-    let picture = document.querySelector(".picture");
-    let pokemonType = document.querySelector(".type");
-    let pokemonInformation = document.querySelector(".information");
-
+    var pictures = document.querySelectorAll(".picture");
     for (i = 0; i < names.length; i++) {
+      numberOutput = "";
       if ((i + 1).toString().includes(numberInput)) {
-        numberOutput.push(
+        numberOutput +=
           "Name: " +
-            names[i] +
-            ", Number: " +
-            (i + 1).toString() +
-            ", Type: " +
-            type[i] +
-            ", Move: " +
-            move[i] +
-            "\n"
-        );
-        maxNum += 1;
-      }
-      // break after 5 pokemon match results
-      if (maxNum >= 5) {
-        break;
+          names[i] +
+          ", Number: " +
+          (i + 1).toString() +
+          ", Type: " +
+          type[i] +
+          ", Move: " +
+          move[i];
+
+        let node = document.createTextNode(numberOutput);
+        let img = document.createElement("IMG");
+        // img.setAttribute("src", picture[i]);
+
+        let newli = document.createElement("li");
+        newli.appendChild(img);
+        newli.appendChild(node);
+        newList.appendChild(newli);
       }
     }
-    // search results
-    alert(numberOutput.join(""));
   }
 });
 
