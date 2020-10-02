@@ -85,43 +85,46 @@ let searchResults = [];
 numberSearch.addEventListener("keyup", (e) => {
   e.preventDefault();
   let numberInput = numberSearchBar.value;
-
   // number validation
-  if (isNaN(numberInput) || numberInput < 1 || numberInput > 20) {
+  if (
+    (isNaN(numberInput) || numberInput < 1 || numberInput > 20) &&
+    numberInput.length > 0
+  ) {
     alert("Please enter numbers 1-20");
-  } else {
+  }
+  // else if (numberInput.length == 0) {}
+  else {
     // appending pokemon that match search results into an array
-    console.log(searchResults, "from last time");
-    if (searchResults.length > 0) {
-      for (i = 0; i < searchResults.length; i++)
-        newList.removeChild(searchResults[i]);
+    for (i = 0; i < searchResults.length; i++) {
+      newList.removeChild(searchResults[i]);
     }
     searchResults = [];
-    console.log(searchResults, "deleted");
     var pictures = document.querySelectorAll(".picture");
-    for (i = 0; i < names.length; i++) {
-      numberOutput = "";
-      if ((i + 1).toString().includes(numberInput)) {
-        numberOutput +=
-          "Name: " +
-          names[i] +
-          ", Number: " +
-          (i + 1).toString() +
-          ", Type: " +
-          type[i] +
-          ", Move: " +
-          move[i];
+    if (numberInput.length > 0) {
+      for (i = 0; i < names.length; i++) {
+        numberOutput = "";
+        if ((i + 1).toString().includes(numberInput)) {
+          numberOutput +=
+            "Name: " +
+            names[i] +
+            ", Number: " +
+            (i + 1).toString() +
+            ", Type: " +
+            type[i] +
+            ", Move: " +
+            move[i];
 
-        let node = document.createTextNode(numberOutput);
-        let img = document.createElement("IMG");
-        img.setAttribute("src", pictures[i].src);
-        img.setAttribute("class", "imgResults");
-        let newLi = document.createElement("li");
-        newLi.setAttribute("class", "searchResult");
-        newLi.appendChild(img);
-        newLi.appendChild(node);
-        searchResults.push(newLi);
-        newList.appendChild(newLi);
+          let node = document.createTextNode(numberOutput);
+          let img = document.createElement("IMG");
+          img.setAttribute("src", pictures[i].src);
+          img.setAttribute("class", "imgResults");
+          let newLi = document.createElement("li");
+          newLi.setAttribute("class", "searchResult");
+          newLi.appendChild(img);
+          newLi.appendChild(node);
+          searchResults.push(newLi);
+          newList.appendChild(newLi);
+        }
       }
     }
   }
