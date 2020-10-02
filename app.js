@@ -73,9 +73,21 @@ move = [
 ];
 
 let newDiv = document.createElement("div");
-newDiv.textContent = "";
-const searched = document.querySelector(".container");
-searched.appendChild(newDiv);
+const headerContainer = document.querySelector(".container");
+headerContainer.appendChild(newDiv);
+
+let newli = document.createElement("li");
+var node = document.createTextNode("This is new text");
+newli.appendChild(node);
+
+let newList = document.createElement("ul");
+newList.setAttribute("class", "searchedList");
+newList.appendChild(newli);
+
+newDiv.appendChild(newList);
+
+// let newli= document.createElement("li");
+// const list=document.querySelector(".searList")
 
 numberSearch.addEventListener("keyup", (e) => {
   e.preventDefault();
@@ -87,6 +99,7 @@ numberSearch.addEventListener("keyup", (e) => {
     alert("Please enter numbers 1-20");
   } else {
     // appending pokemon that match search results into an array
+
     for (i = 0; i < names.length; i++) {
       if ((i + 1).toString().includes(numberInput)) {
         numberOutput.push(
