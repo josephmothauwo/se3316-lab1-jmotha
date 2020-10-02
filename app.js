@@ -93,6 +93,12 @@ numberSearch.addEventListener("keyup", (e) => {
   } else {
     // appending pokemon that match search results into an array
 
+    let pokemonName = document.querySelector(".pokemonName");
+    let number = document.querySelector(".#");
+    let picture = document.querySelector(".picture");
+    let pokemonType = document.querySelector(".type");
+    let pokemonInformation = document.querySelector(".information");
+
     for (i = 0; i < names.length; i++) {
       if ((i + 1).toString().includes(numberInput)) {
         numberOutput.push(
