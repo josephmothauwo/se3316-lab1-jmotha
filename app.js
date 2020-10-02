@@ -107,8 +107,8 @@ numberSearch.addEventListener("keyup", (e) => {
 
         let node = document.createTextNode(numberOutput);
         let img = document.createElement("IMG");
-        // img.setAttribute("src", picture[i]);
-
+        img.setAttribute("src", pictures[i].src);
+        img.setAttribute("class", "imgResults");
         let newli = document.createElement("li");
         newli.appendChild(img);
         newli.appendChild(node);
