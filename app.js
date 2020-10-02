@@ -138,19 +138,18 @@ numberSearchBar.addEventListener("keyup", function (event) {
   }
 });
 
-nameSearch.addEventListener("submit", (e) => {
+nameSearch.addEventListener("keyup", (e) => {
   e.preventDefault();
   var letters = /^[A-Za-z]+$/;
   let messages = [];
   let nameInput = nameSearchBar.value.toLowerCase();
-  let maxNum = 0;
-  let nameOutput = [];
+  console.log(nameInput);
   // letter and length validation
-  if (!nameSearchBar.value.match(letters)) {
+  if (!nameInput.match(letters) && nameInput.length > 0) {
     messages.push("Please only enter characters");
   }
 
-  if (nameSearchBar.value.length > 20) {
+  if (nameInput.length > 20) {
     messages.push("Name must be shorter than 21 characters");
   }
 
@@ -158,27 +157,39 @@ nameSearch.addEventListener("submit", (e) => {
     alert(messages.join(", "));
   } else {
     // appending pokemon that match search results into an array
-    for (i = 0; i < names.length; i++) {
-      if (names[i].toLowerCase().includes(nameInput)) {
-        nameOutput.push(
-          "Name: " +
+
+    for (i = 0; i < searchResults.length; i++) {
+      newList.removeChild(searchResults[i]);
+    }
+    searchResults = [];
+    var pictures = document.querySelectorAll(".picture");
+    if (nameInput.length > 0) {
+      for (i = 0; i < names.length; i++) {
+        nameOutput = "";
+        if (names[i].toLowerCase().includes(nameInput)) {
+          nameOutput +=
+            "Name: " +
             names[i] +
-            ",Number: " +
+            ", Number: " +
             (i + 1).toString() +
             ", Type: " +
             type[i] +
             ", Move: " +
-            move[i] +
-            "\n"
-        );
-        maxNum += 1;
-      }
-      // break after 5 pokemon match results
-      if (maxNum >= 5) {
-        break;
+            move[i];
+          let node = document.createTextNode(nameOutput);
+          let img = document.createElement("IMG");
+          img.setAttribute("src", pictures[i].src);
+          img.setAttribute("class", "imgResults");
+          let newLi = document.createElement("li");
+          newLi.setAttribute("class", "searchResult");
+          newLi.appendChild(img);
+          newLi.appendChild(node);
+          searchResults.push(newLi);
+          newList.appendChild(newLi);
+        }
+        // break after 5 pokemon match results
       }
     }
-    alert(nameOutput.join(""));
   }
 });
 
