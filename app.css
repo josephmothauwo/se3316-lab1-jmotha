@@ -75,3 +75,7 @@ button {
   list-style-type: none;
   background-color: peachpuff;
 }
+
+.resultsContainer {
+  border: 2px solid blue;
+}

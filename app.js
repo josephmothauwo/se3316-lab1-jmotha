@@ -79,6 +79,7 @@ headerContainer.appendChild(resultsContainer);
 
 let newList = document.createElement("ul");
 newList.setAttribute("class", "searchedList");
+resultsContainer.hidden = true;
 
 resultsContainer.appendChild(newList);
 let searchResults = [];
@@ -92,6 +93,9 @@ numberSearch.addEventListener("keyup", (e) => {
   ) {
     alert("Please enter numbers 1-20");
   }
+  if (numberInput.length == 0) {
+    resultsContainer.hidden = true;
+  }
   // else if (numberInput.length == 0) {}
   else {
     // appending pokemon that match search results into an array
@@ -104,6 +108,7 @@ numberSearch.addEventListener("keyup", (e) => {
       for (i = 0; i < names.length; i++) {
         numberOutput = "";
         if ((i + 1).toString().includes(numberInput)) {
+          resultsContainer.hidden = false;
           numberOutput +=
             "Name: " +
             names[i] +
@@ -143,7 +148,6 @@ nameSearch.addEventListener("keyup", (e) => {
   var letters = /^[A-Za-z]+$/;
   let messages = [];
   let nameInput = nameSearchBar.value.toLowerCase();
-  console.log(nameInput);
   // letter and length validation
   if (!nameInput.match(letters) && nameInput.length > 0) {
     messages.push("Please only enter characters");
@@ -155,9 +159,12 @@ nameSearch.addEventListener("keyup", (e) => {
 
   if (messages.length > 0) {
     alert(messages.join(", "));
+  }
+
+  if (nameInput.length == 0) {
+    resultsContainer.hidden = true;
   } else {
     // appending pokemon that match search results into an array
-
     for (i = 0; i < searchResults.length; i++) {
       newList.removeChild(searchResults[i]);
     }
@@ -167,6 +174,7 @@ nameSearch.addEventListener("keyup", (e) => {
       for (i = 0; i < names.length; i++) {
         nameOutput = "";
         if (names[i].toLowerCase().includes(nameInput)) {
+          resultsContainer.hidden = false;
           nameOutput +=
             "Name: " +
             names[i] +
